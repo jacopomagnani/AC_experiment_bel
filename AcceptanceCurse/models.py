@@ -23,10 +23,11 @@ class Constants(BaseConstants):
     B_rounds = [2]
     type_space = [1, 2, 3]
     type_labels = ["H", "M", "L"]
-    A_match_value = [160, 80, 40]
-    A_reservation_value = [100, 75, 25]
-    B_match_value = [160, 80, 40]
-    B_reservation_value = [80, 75, 25]
+    status_space = [0, 1]
+    status_labels = ["active", "passive"]
+    match_value = [160, 80, 40]
+    reservation_value = [100, 75, 25]
+
     signal_space = [1, 2, 3]
     signal_names = ["red", "yellow", "blue"]
     pL = [0, 1/2, 1/2]
@@ -61,8 +62,11 @@ class Subsession(BaseSubsession):
             for p in self.get_players():
                 if p.id_in_group == p1:
                     p.partner_id = p2
+                    p.status = 0
                 elif p.id_in_group == p2:
                     p.partner_id = p1
+                    p.status = 1
+                    p.type = 2
         #  generate signals
         for p in self.get_players():
             for q in self.get_players():
@@ -77,12 +81,8 @@ class Subsession(BaseSubsession):
 
 # matching
     def get_outcome(self):
-        if self.game == "A":
-            match_value = Constants.A_match_value
-            reservation_value = Constants.A_reservation_value
-        elif self.game == "B":
-            match_value = Constants.B_match_value
-            reservation_value = Constants.B_reservation_value
+        match_value = Constants.match_value
+        reservation_value = Constants.reservation_value
         for p in self.get_players():
             for q in self.get_players():
                 if p.partner_id == q.id_in_group:
@@ -101,6 +101,7 @@ class Group(BaseGroup):
 
 class Player(BasePlayer):
     type = models.IntegerField()
+    status = models.IntegerField()
     partner_id = models.IntegerField()
     partner_type = models.IntegerField()
     signal = models.IntegerField()
