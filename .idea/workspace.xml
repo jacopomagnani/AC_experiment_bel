@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7ed58e6-a89b-4cc1-9855-f30c4f76d6e6" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/AcceptanceCurse/models.py" afterPath="$PROJECT_DIR$/AcceptanceCurse/models.py" />
-      <change beforePath="$PROJECT_DIR$/AcceptanceCurse/templates/AcceptanceCurse/FinalPage.html" afterPath="$PROJECT_DIR$/AcceptanceCurse/templates/AcceptanceCurse/FinalPage.html" />
-      <change beforePath="$PROJECT_DIR$/AcceptanceCurse/templates/AcceptanceCurse/Page1Active.html" afterPath="$PROJECT_DIR$/AcceptanceCurse/templates/AcceptanceCurse/Page1Active.html" />
-      <change beforePath="$PROJECT_DIR$/AcceptanceCurse/templates/AcceptanceCurse/Page1Passive.html" afterPath="$PROJECT_DIR$/AcceptanceCurse/templates/AcceptanceCurse/Page1Passive.html" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AcceptanceCurse/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="586">
-              <caret line="111" column="34" lean-forward="false" selection-start-line="111" selection-start-column="34" selection-end-line="111" selection-end-column="34" />
+            <state relative-caret-position="743">
+              <caret line="84" column="37" lean-forward="true" selection-start-line="84" selection-start-column="37" selection-end-line="84" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -48,7 +43,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Page1Active.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Page1Active.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AcceptanceCurse/templates/AcceptanceCurse/Page1Active.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="364">
@@ -125,10 +120,10 @@
         <option value="$PROJECT_DIR$/AcceptanceCurse/pages.py" />
         <option value="$PROJECT_DIR$/AcceptanceCurse/templates/AcceptanceCurse/Page2.html" />
         <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/AcceptanceCurse/models.py" />
         <option value="$PROJECT_DIR$/AcceptanceCurse/templates/AcceptanceCurse/Page1Passive.html" />
         <option value="$PROJECT_DIR$/AcceptanceCurse/templates/AcceptanceCurse/FinalPage.html" />
         <option value="$PROJECT_DIR$/AcceptanceCurse/templates/AcceptanceCurse/Page1Active.html" />
+        <option value="$PROJECT_DIR$/AcceptanceCurse/models.py" />
       </list>
     </option>
   </component>
@@ -582,14 +577,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AcceptanceCurse/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="111" column="34" lean-forward="false" selection-start-line="111" selection-start-column="34" selection-end-line="111" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AcceptanceCurse/templates/AcceptanceCurse/FinalPage.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
@@ -618,6 +605,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
           <caret line="120" column="97" lean-forward="false" selection-start-line="120" selection-start-column="97" selection-end-line="120" selection-end-column="97" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AcceptanceCurse/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="743">
+          <caret line="84" column="37" lean-forward="true" selection-start-line="84" selection-start-column="37" selection-end-line="84" selection-end-column="37" />
           <folding />
         </state>
       </provider>

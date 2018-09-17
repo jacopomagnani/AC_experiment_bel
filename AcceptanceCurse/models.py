@@ -40,7 +40,7 @@ class Subsession(BaseSubsession):
 
     game = models.IntegerField()
     game_name = models.StringField()
-    game_prob = models.IntegerField()
+    game_prob = models.FloatField()
 
     def initialize_round(self):
         # set paying round
