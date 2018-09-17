@@ -14,12 +14,15 @@ class MyWaitPage1(WaitPage):
         self.subsession.initialize_round()
 
 
-class Page1(Page):
+class Page1Active(Page):
 
     timeout_seconds = 60
 
     form_model = 'player'
     form_fields = ['choice']
+
+    def is_displayed(self):
+        return self.player.status == 0
 
     def before_next_page(self):
         if self.timeout_happened:
@@ -29,6 +32,14 @@ class Page1(Page):
                 self.player.choice = False
             else:
                 self.player.choice = True
+
+
+class Page1Passive(Page):
+
+    timeout_seconds = 30
+
+    def is_displayed(self):
+        return self.player.status == 1
 
 
 class MyWaitPage2(WaitPage):
@@ -57,7 +68,8 @@ class FinalPage(Page):
 page_sequence = [
     Intro,
     MyWaitPage1,
-    Page1,
+    Page1Active,
+    Page1Passive,
     MyWaitPage2,
     Page2,
     FinalPage

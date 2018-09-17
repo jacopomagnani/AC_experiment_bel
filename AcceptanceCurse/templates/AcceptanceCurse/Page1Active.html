@@ -1,0 +1,168 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Round {{subsession.round_number}}
+{% endblock %}
+
+{% block content %}
+    <hr>
+    <h4 align="center"> In this round you will play Game {{ subsession.game_name }}.</h4>
+    <div class = "row">
+        <div class="column">
+            <p align="center">
+                Points if you form a partnership:
+            </p>
+            <table class="tablex" align="center">
+                <tr>
+                    <td>Your Partner's Type</td>
+                    <td>H</td>
+                    <td>M</td>
+                    <td>L</td>
+                </tr>
+                <tr>
+                    <td>Your Points</td>
+                    <td>160</td>
+                    <td>80</td>
+                    <td>40</td>
+                </tr>
+            </table>
+            <br>
+            <p align="center">
+                Points if you do not form a partnership:
+            </p>
+            <table class="tablex" align="center">
+                <tr>
+                    <td>Your Type</td>
+                    <td>H</td>
+                    <td>M</td>
+                    <td>L</td>
+                </tr>
+                <tr>
+                    <td>Your Points</td>
+                    <td>100</td>
+                    <td>75</td>
+                    <td>25</td>
+                </tr>
+            </table>
+            <br>
+            <p align="center">
+                Probability the passive player proposes to form partnership:
+            </p>
+            <table class="tablex" align="center">
+                <tr>
+                    <td>Passive Player's Type</td>
+                    <td>H</td>
+                    <td>M</td>
+                    <td>L</td>
+                </tr>
+                <tr>
+                    <td>Probability</td>
+                    <td>{{ subsession.game_prob }}%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                </tr>
+            </table>
+        </div>
+        <div class="column">
+            <p align="center">
+                Distribution of clues:
+            </p>
+            <figure align="center"><img src="{% static "AcceptanceCurse/urns.png" %}" width="80%" height="80%"/></figure>
+        </div>
+    </div>
+
+    <hr>
+
+    <h4 align="center"> In this round you are active: make a choice.</h4>
+    <p>
+        You are an M type (if you do not form a partnership, you earn 75 points).
+    </p>
+    {% if player.signal == 1 %}
+    <p>
+        You have received a <font color="red"> red </font> clue.
+    </p>
+    {% elif player.signal == 2 %}
+    <p>
+        You have received a <font color="gold"> yellow </font> clue.
+    </p>
+    {% elif player.signal == 3 %}
+    <p>
+        You have received a <font color="blue"> blue </font> clue.
+    </p>
+    {% endif %}
+
+    {% formfield player.choice label="Do you want to form a partnership?"%}
+    {% next_button %}
+    <br />
+    <br />
+    <br />
+    <h4>History Table</h4>
+    <table class="tablex">
+        <tr>
+            <th>Round</th>
+            <th>Game</th>
+            <th>Your Role</th>
+            <th>Your Type</th>
+            <th>Your Clue</th>
+            <th>Your Choice</th>
+            <th>Partner's Choice</th>
+            <th>Partner's Type</th>
+            <th>Your points</th>
+        </tr>
+        {% for p in player.in_all_rounds %}
+            <tr>
+                <td>{{ p.subsession.round_number }}</td>
+                <td>{{ p.subsession.game_name }} </td>
+                <td>{{ p.status_name }}</td>
+                <td>{% if p.type == 1 %} H {% elif p.type == 2 %} M {% elif p.type == 3 %} L {% endif %}</td>
+                <td>{% if p.status == 0 %} {% if p.signal == 1 %} Red {% elif p.signal == 2 %} Yellow {% elif p.signal == 3 %} Blue {% endif %} {% else %} - {% endif %}</td>
+                <td>{% if p.round_number == player.round_number %} - {% elif p.choice %} Yes {% else %} No {% endif %}</td>
+                <td>{% if p.round_number == player.round_number %} - {% elif p.partner_choice %} Yes {% else %} No {% endif %}</td>
+                <td>{% if p.round_number == player.round_number %} - {% elif p.partner_type == 1 %} H {% elif p.partner_type == 2 %} M {% elif p.partner_type == 3 %} L {% endif %}</td>
+                <td>{% if p.round_number == player.round_number %} - {% else %} {{p.points}} {% endif %}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}
+
+{% block styles %}
+    <style>
+        .otree-timer {
+            display: none;
+        }
+        .column {
+            float: left;
+            width: 50%;
+            padding: 5px;
+        }
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        tablex, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        $(function () {
+            $('.otree-timer__time-left').on('update.countdown', function (event) {
+                if (event.offset.totalSeconds === 5) {
+                    $('.otree-timer').show();
+                }
+            });
+        });
+    </script>
+{% endblock %}
+

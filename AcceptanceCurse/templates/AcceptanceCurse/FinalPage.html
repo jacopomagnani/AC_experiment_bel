@@ -8,7 +8,7 @@
 {% block content %}
 
     <p>
-        Part 1 of the experiment is over. The paying round was:  {{ paying_round }}. Your payoff in that round is: {{player.participant.payoff}}.
+        Part 1 of the experiment is over. The paying round was round {{ paying_round }}. Your payoff in that round is: {{player.participant.payoff}}.
     </p>
 
     <br />
@@ -20,8 +20,8 @@
         <tr>
             <th>Round</th>
             <th>Game</th>
+            <th>Your Role</th>
             <th>Your Type</th>
-            <th>Your Reservation Value</th>
             <th>Your Clue</th>
             <th>Your Choice</th>
             <th>Partner's Choice</th>
@@ -31,12 +31,12 @@
         {% for p in player.in_all_rounds %}
             <tr>
                 <td>{{ p.subsession.round_number }}</td>
-                <td>{{ p.subsession.game }} </td>
+                <td>{{ p.subsession.game_name }} </td>
+                <td>{{ p.status_name }}</td>
                 <td>{% if p.type == 1 %} H {% elif p.type == 2 %} M {% elif p.type == 3 %} L {% endif %}</td>
-                <td>{% if p.type == 1 %} {% if p.subsession.game == "A" %} 100 {% elif p.subsession.game == "B" %} 80 {% endif %} {% elif p.type == 2 %} 75 {% elif p.type == 3 %} 25 {% endif %}</td>
-                <td>{% if p.signal == 1 %} Red {% elif p.signal == 2 %} Yellow {% elif p.signal == 3 %} Blue {% endif %}</td>
-                <td>{% if p.choice %} Propose {% else %} Don't Propose {% endif %}</td>
-                <td>{% if p.partner_choice %} Propose {% else %} Don't Propose {% endif %}</td>
+                <td>{% if p.status == 0 %} {% if p.signal == 1 %} Red {% elif p.signal == 2 %} Yellow {% elif p.signal == 3 %} Blue {% endif %} {% else %} - {% endif %}</td>
+                <td>{% if p.choice %} Yes {% else %} No {% endif %}</td>
+                <td>{% if p.partner_choice %} Yes {% else %} No {% endif %}</td>
                 <td>{% if p.partner_type == 1 %} H {% elif p.partner_type == 2 %} M {% elif p.partner_type == 3 %} L {% endif %}</td>
                 <td>{{p.points}}</td>
             </tr>
