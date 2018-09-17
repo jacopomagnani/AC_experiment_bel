@@ -114,14 +114,14 @@ class Player(BasePlayer):
     partner_id = models.IntegerField()
     partner_type = models.IntegerField()
     signal = models.IntegerField()
-    choice = models.BooleanField(
+    choice = models.IntegerField(
         choices=[
-            [True, 'Yes'],
-            [False, 'No'],
+            [1, 'Yes'],
+            [0, 'No'],
         ],
         widget=widgets.RadioSelectHorizontal
     )
-    partner_choice = models.BooleanField()
+    partner_choice = models.IntegerField()
     match = models.IntegerField()
     late = models.IntegerField()
     points = models.IntegerField()

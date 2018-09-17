@@ -115,8 +115,8 @@
                 <td>{{ p.status_name }}</td>
                 <td>{% if p.type == 1 %} H {% elif p.type == 2 %} M {% elif p.type == 3 %} L {% endif %}</td>
                 <td>{% if p.status == 0 %} {% if p.signal == 1 %} Red {% elif p.signal == 2 %} Yellow {% elif p.signal == 3 %} Blue {% endif %} {% else %} - {% endif %}</td>
-                <td>{% if p.round_number == player.round_number %} - {% elif p.choice %} Yes {% else %} No {% endif %}</td>
-                <td>{% if p.round_number == player.round_number %} - {% elif p.partner_choice %} Yes {% else %} No {% endif %}</td>
+                <td>{% if p.round_number == player.round_number %} - {% elif p.choice == 1 %} Yes {% else %} No {% endif %}</td>
+                <td>{% if p.round_number == player.round_number %} - {% elif p.partner_choice == 1 %} Yes {% else %} No {% endif %}</td>
                 <td>{% if p.round_number == player.round_number %} - {% elif p.partner_type == 1 %} H {% elif p.partner_type == 2 %} M {% elif p.partner_type == 3 %} L {% endif %}</td>
                 <td>{% if p.round_number == player.round_number %} - {% else %} {{p.points}} {% endif %}</td>
             </tr>
