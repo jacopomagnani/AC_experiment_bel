@@ -40,7 +40,6 @@ class Subsession(BaseSubsession):
 
     game = models.IntegerField()
     game_name = models.StringField()
-    game_prob = models.FloatField()
 
     def initialize_round(self):
         # set paying round
@@ -50,7 +49,6 @@ class Subsession(BaseSubsession):
         # set game
         self.game = Constants.game_sequence[self.round_number-1]
         self.game_name = Constants.game_labels[self.game]
-        self.game_prob = Constants.prob_Haccept[self.game]*100
         # assign types
         for p in self.get_players():
             p.type = random.choice(Constants.type_space)
