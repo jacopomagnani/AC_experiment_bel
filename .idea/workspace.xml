@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f7ed58e6-a89b-4cc1-9855-f30c4f76d6e6" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/AcceptanceCurse/models.py" afterPath="$PROJECT_DIR$/AcceptanceCurse/models.py" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
+      <change beforePath="$PROJECT_DIR$/AcceptanceCurse/templates/AcceptanceCurse/Page1.html" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,8 +17,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AcceptanceCurse/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+            <state relative-caret-position="321">
+              <caret line="52" column="36" lean-forward="false" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -38,7 +37,7 @@
       <file leaf-file-name="Page1Active.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AcceptanceCurse/templates/AcceptanceCurse/Page1Active.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="497">
+            <state relative-caret-position="1170">
               <caret line="78" column="81" lean-forward="false" selection-start-line="78" selection-start-column="26" selection-end-line="78" selection-end-column="81" />
               <folding />
             </state>
@@ -143,29 +142,27 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="AcceptanceCurse_experiment_bel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AcceptanceCurse_experiment_bel" type="462c0819:PsiDirectoryNode" />
+              <item name="AC_experiment_bel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AC_experiment_bel" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="AcceptanceCurse_experiment_bel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AcceptanceCurse_experiment_bel" type="462c0819:PsiDirectoryNode" />
+              <item name="AC_experiment_bel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AC_experiment_bel" type="462c0819:PsiDirectoryNode" />
               <item name="AcceptanceCurse" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="AcceptanceCurse_experiment_bel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AcceptanceCurse_experiment_bel" type="462c0819:PsiDirectoryNode" />
+              <item name="AC_experiment_bel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AC_experiment_bel" type="462c0819:PsiDirectoryNode" />
               <item name="AcceptanceCurse" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="AcceptanceCurse_experiment_bel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AcceptanceCurse_experiment_bel" type="462c0819:PsiDirectoryNode" />
+              <item name="AC_experiment_bel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AC_experiment_bel" type="462c0819:PsiDirectoryNode" />
               <item name="AcceptanceCurse" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="AcceptanceCurse" type="462c0819:PsiDirectoryNode" />
@@ -174,6 +171,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -210,9 +209,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="355" y="148" width="1482" height="941" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23616734" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23616734" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -588,7 +586,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AcceptanceCurse/templates/AcceptanceCurse/Page1Active.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
+        <state relative-caret-position="1170">
           <caret line="78" column="81" lean-forward="false" selection-start-line="78" selection-start-column="26" selection-end-line="78" selection-end-column="81" />
           <folding />
         </state>
@@ -596,8 +594,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AcceptanceCurse/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        <state relative-caret-position="321">
+          <caret line="52" column="36" lean-forward="false" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
           <folding />
         </state>
       </provider>
