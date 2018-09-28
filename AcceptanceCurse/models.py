@@ -21,7 +21,7 @@ class Constants(BaseConstants):
     num_rounds = 3
     game_sequence = [0, 2, 4]
     type_space = [1, 2, 3]
-    type_labels = ["H", "M", "L"]
+    type_labels = ["X", "Y", "Z"]
     status_space = [0, 1]
     status_labels = ["active", "passive"]
     match_value = [160, 80, 40]
@@ -33,7 +33,7 @@ class Constants(BaseConstants):
     pH = [1/2, 1/2, 0]
     game_space = [0, 1, 2, 3, 4]
     game_labels= ["A", "B", "C", "D", "E"]
-    prob_Haccept = [1, 0.75, 0.5, 0.25, 0]
+    prob_Haccept = [100, 75, 50, 25, 0]
 
 
 class Subsession(BaseSubsession):
@@ -72,7 +72,7 @@ class Subsession(BaseSubsession):
                     if p.type == 2 or p.type == 3:
                         p.choice = 1
                     else:
-                        p.choice = numpy.random.choice([0, 1], p=[1-Constants.prob_Haccept[self.game], Constants.prob_Haccept[self.game]])
+                        p.choice = numpy.random.choice([0, 1], p=[1-Constants.prob_Haccept[self.game]/100, Constants.prob_Haccept[self.game]/100])
         #  generate signals
         for p in self.get_players():
             for q in self.get_players():

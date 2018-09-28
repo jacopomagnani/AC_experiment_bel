@@ -16,9 +16,9 @@
             <table class="tablex" align="center">
                 <tr>
                     <td>Your Partner's Type</td>
-                    <td>H</td>
-                    <td>M</td>
-                    <td>L</td>
+                    <td>X</td>
+                    <td>Y</td>
+                    <td>Z</td>
                 </tr>
                 <tr>
                     <td>Your Points</td>
@@ -34,9 +34,9 @@
             <table class="tablex" align="center">
                 <tr>
                     <td>Your Type</td>
-                    <td>H</td>
-                    <td>M</td>
-                    <td>L</td>
+                    <td>X</td>
+                    <td>Y</td>
+                    <td>Z</td>
                 </tr>
                 <tr>
                     <td>Your Points</td>
@@ -52,13 +52,13 @@
             <table class="tablex" align="center">
                 <tr>
                     <td>Passive Player's Type</td>
-                    <td>H</td>
-                    <td>M</td>
-                    <td>L</td>
+                    <td>X</td>
+                    <td>Y</td>
+                    <td>Z</td>
                 </tr>
                 <tr>
                     <td>Probability</td>
-                    <td>{{ subsession.game_prob }}%</td>
+                    <td>{{ prob }}%</td>
                     <td>100%</td>
                     <td>100%</td>
                 </tr>
@@ -76,7 +76,7 @@
 
     <h4 align="center"> In this round you are active: make a choice.</h4>
     <p>
-        You are an M type (if you do not form a partnership, you earn 75 points).
+        You are a Y type (if you do not form a partnership, you earn 75 points).
     </p>
     {% if player.signal == 1 %}
     <p>
@@ -115,11 +115,11 @@
                 <td>{{ p.subsession.round_number }}</td>
                 <td>{{ p.subsession.game_name }} </td>
                 <td>{{ p.status_name }}</td>
-                <td>{% if p.type == 1 %} H {% elif p.type == 2 %} M {% elif p.type == 3 %} L {% endif %}</td>
+                <td>{% if p.type == 1 %} X {% elif p.type == 2 %} Y {% elif p.type == 3 %} Z {% endif %}</td>
                 <td>{% if p.status == 0 %} {% if p.signal == 1 %} Red {% elif p.signal == 2 %} Yellow {% elif p.signal == 3 %} Blue {% endif %} {% else %} - {% endif %}</td>
                 <td>{% if p.round_number == player.round_number %} - {% elif p.choice == 1 %} Yes {% else %} No {% endif %}</td>
                 <td>{% if p.round_number == player.round_number %} - {% elif p.partner_choice == 1 %} Yes {% else %} No {% endif %}</td>
-                <td>{% if p.round_number == player.round_number %} - {% elif p.partner_type == 1 %} H {% elif p.partner_type == 2 %} M {% elif p.partner_type == 3 %} L {% endif %}</td>
+                <td>{% if p.round_number == player.round_number %} - {% elif p.partner_type == 1 %} X {% elif p.partner_type == 2 %} Y {% elif p.partner_type == 3 %} Z {% endif %}</td>
                 <td>{% if p.round_number == player.round_number %} - {% else %} {{p.points}} {% endif %}</td>
             </tr>
         {% endfor %}

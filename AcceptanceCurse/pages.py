@@ -21,6 +21,9 @@ class Page1Active(Page):
     form_model = 'player'
     form_fields = ['choice']
 
+    def vars_for_template(self):
+        return {'prob': Constants.prob_Haccept[self.subsession.game]}
+
     def is_displayed(self):
         return self.player.status == 0
 
@@ -37,6 +40,9 @@ class Page1Active(Page):
 class Page1Passive(Page):
 
     timeout_seconds = 30
+
+    def vars_for_template(self):
+        return {'prob': Constants.prob_Haccept[self.subsession.game]}
 
     def is_displayed(self):
         return self.player.status == 1
