@@ -41,10 +41,14 @@ class Subsession(BaseSubsession):
     game = models.IntegerField()
     game_name = models.StringField()
 
-    def initialize_round(self):
-        # set game
-        self.game = Constants.game_sequence[self.round_number-1]
-        self.game_name = Constants.game_labels[self.game]
+    def creating_session(self):
+        if self.round_number == 1:
+            paying_round = random.randint(1, Constants.num_rounds)
+            self.session.vars['paying_round'] = paying_round
+            self.in_round(2).game = 1
+            for t in range(1, Constants.num_rounds+1):
+                self.in_round(t).game = Constants.game_sequence[t-1]
+                self.in_round(t).game_name = Constants.game_labels[self.in_round(t).game]
 
 
 class Group(BaseGroup):
