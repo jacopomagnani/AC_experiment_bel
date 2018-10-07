@@ -17,7 +17,7 @@ Matching Game with noisy signals
 
 class Constants(BaseConstants):
     name_in_url = 'game'
-    players_per_group = 2
+    players_per_group = None
     num_rounds = 3
     game_sequence = [0, 2, 4]
     type_space = [1, 2, 3]
@@ -42,14 +42,20 @@ class Subsession(BaseSubsession):
     game_name = models.StringField()
 
     def creating_session(self):
+        # set paying round and game sequence
         if self.round_number == 1:
             paying_round = random.randint(1, Constants.num_rounds)
             self.session.vars['paying_round'] = paying_round
-            self.in_round(2).game = 1
             for t in range(1, Constants.num_rounds+1):
                 self.in_round(t).game = Constants.game_sequence[t-1]
                 self.in_round(t).game_name = Constants.game_labels[self.in_round(t).game]
-
+        # form groups
+        group_matrix = []
+        players = self.get_players()
+        ppg = self.session.config['players_per_group']
+        for i in range(0, len(players), ppg):
+            group_matrix.append(players[i:i + ppg])
+        self.set_group_matrix(group_matrix)
 
 class Group(BaseGroup):
 
@@ -58,7 +64,8 @@ class Group(BaseGroup):
         for p in self.get_players():
             p.type = random.choice(Constants.type_space)
         # form random pairs, assign status, reassign type=M to active player (p1) and assign choice to passive player (p2)
-        id_list = list(range(1,Constants.players_per_group + 1))
+        num_players_in_group = len(self.get_players())
+        id_list = list(range(1,num_players_in_group+1))
         while id_list:
             idx1 = random.randrange(0, len(id_list))
             p1 = id_list.pop(idx1)
