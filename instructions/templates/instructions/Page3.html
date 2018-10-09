@@ -1,0 +1,27 @@
+{% extends "instructions/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    INSTRUCTIONS - PART 1
+<h5>
+    THE BASIC IDEA
+</h5>
+{% endblock %}
+
+
+{% block content %}
+
+<p>
+    <ul>
+    <li>In this part, you have to decide whether to <b>form a partnership</b> with other players.</li>
+    <li>The benefit of forming a partnership with another player will depend on the other <b>player’s type</b>, which is randomly assigned by the computer.</li>
+    <li>During the experiment, you will not know the type of your potential partners.</li>
+    <li>However, you will receive <b>clues</b> about their types before you decide to form a partnership.</li>
+    <li>If you do not form a partnership, you receive an amount of points that depends only on your own type.</li>
+    </ul>
+</p>
+
+    {% next_button %}
+
+{% endblock %}
+

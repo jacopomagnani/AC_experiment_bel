@@ -22,6 +22,11 @@ class Page1(Page):
         self.player.num_correct = k
         self.player.payoff = k*2
 
+    def vars_for_template(self):
+        rate = self.session.config['real_world_currency_per_point']
+        return {
+            'rate': c(rate).to_real_world_currency(self.session)
+        }
 
 class Results(Page):
     pass

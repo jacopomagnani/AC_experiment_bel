@@ -38,6 +38,11 @@ class Subsession(BaseSubsession):
                                               #          "{0:.2f}".format(k / n * 100) + "%"
                         for k in indices
                     ]
+                    q_probabilities = [
+                        "{0:.0f}".format(100 - k / n * 100) + "%"
+                                              #          "{0:.2f}".format(k / n * 100) + "%"
+                        for k in indices
+                    ]
                 else:
                     probabilities = [
                         str(k) + "/" + str(n)
@@ -51,7 +56,7 @@ class Subsession(BaseSubsession):
                 # create list of choices
                 # ----------------------------------------------------------------------------------------------------
                 p.participant.vars['mpl_choices'] = list(
-                    zip(indices, form_fields, probabilities)
+                    zip(indices, form_fields, probabilities, q_probabilities)
                 )
 
                 # randomly determine index/choice of binary decision to pay

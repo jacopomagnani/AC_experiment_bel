@@ -64,6 +64,7 @@ class Decision(Page):
         total = len(self.participant.vars['mpl_choices'])
         page = self.subsession.round_number
         progress = page / total * 100
+        rate = self.session.config['real_world_currency_per_point']
 
         if Constants.one_choice_per_page:
             return {
@@ -74,7 +75,8 @@ class Decision(Page):
             }
         else:
             return {
-                'choices':   self.player.participant.vars['mpl_choices']
+                'choices':   self.player.participant.vars['mpl_choices'],
+                'rate': c(rate).to_real_world_currency(self.session)
             }
 
     # set player's payoff

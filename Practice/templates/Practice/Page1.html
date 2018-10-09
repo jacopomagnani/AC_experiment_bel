@@ -1,0 +1,146 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Practice Round {{subsession.round_number}}
+{% endblock %}
+
+{% block content %}
+    <hr>
+    <h4 align="center"> In this round you will play Game {{ subsession.game_name }} </h4>
+    <div class = "row">
+        <div class="column">
+            <p align="center">
+                Points if you form a partnership:
+            </p>
+            <table class="tablex" align="center">
+                <tr>
+                    <td>Your Partner's Type</td>
+                    <td>X</td>
+                    <td>Y</td>
+                    <td>Z</td>
+                </tr>
+                <tr>
+                    <td>Your Points</td>
+                    <td>160</td>
+                    <td>80</td>
+                    <td>40</td>
+                </tr>
+            </table>
+            <br>
+            <p align="center">
+                Points if you do not form a partnership:
+            </p>
+            <table class="tablex" align="center">
+                <tr>
+                    <td>Your Type</td>
+                    <td>X</td>
+                    <td>Y</td>
+                    <td>Z</td>
+                </tr>
+                <tr>
+                    <td>Your Points</td>
+                    <td>{% if subsession.game == 0 %} 100 {% elif subsession.game == 1 %} 80 {% endif %}</td>
+                    <td>75</td>
+                    <td>25</td>
+                </tr>
+            </table>
+        </div>
+        <div class="column">
+            <p align="center">
+                Distribution of Clues:
+            </p>
+            <figure align="center"><img src="{% static "global/urns.png" %}" width="80%" height="80%"/></figure>
+        </div>
+    </div>
+
+    <hr>
+
+    <h4 align="center"> Make a choice </h4>
+
+    {% if player.type == 1 %}
+    <p>
+        You are an X type (if you do not form a partnership, you earn {% if subsession.game == 0 %} 100 {% elif subsession.game == 1 %} 80 {% endif %} points).
+    </p>
+    {% elif player.type == 2 %}
+    <p>
+        You are a Y type (if you do not form a partnership, you earn 75 points).
+    </p>
+    {% elif player.type == 3 %}
+    <p>
+        You are a Z type (if you do not form a partnership, you earn 25 points).
+    </p>
+    {% endif %}
+
+    {% if player.signal == 1 %}
+    <p>
+        You have received a <font color="red"> red </font> clue.
+    </p>
+    {% elif player.signal == 2 %}
+    <p>
+        You have received a <font color="gold"> yellow </font> clue.
+    </p>
+    {% elif player.signal == 3 %}
+    <p>
+        You have received a <font color="blue"> blue </font> clue.
+    </p>
+    {% endif %}
+
+    {% formfield player.choice label="Do you want to form a partnership?"%}
+
+    {% next_button %}
+    <br />
+    <br />
+    <br />
+    <h4>History Table</h4>
+    <table class="tablex">
+        <tr>
+            <th>Round</th>
+            <th>Game</th>
+            <th>Your Type</th>
+            <th>Your Clue</th>
+            <th>Your Choice</th>
+            <th>Partner's Choice</th>
+            <th>Partner's Type</th>
+            <th>Your points</th>
+        </tr>
+        {% for p in player.in_all_rounds %}
+            <tr>
+                <td>{{ p.subsession.round_number }}</td>
+                <td>{{ p.subsession.game_name }} </td>
+                <td>{% if p.type == 1 %} X {% elif p.type == 2 %} Y {% elif p.type == 3 %} Z {% endif %}</td>
+                <td>{% if p.signal == 1 %} Red {% elif p.signal == 2 %} Yellow {% elif p.signal == 3 %} Blue {% endif %}</td>
+                <td>{% if p.round_number == player.round_number %} - {% elif p.choice %} Yes {% else %} No {% endif %}</td>
+                <td>{% if p.round_number == player.round_number %} - {% elif p.partner_choice %} Yes {% else %} No {% endif %}</td>
+                <td>{% if p.round_number == player.round_number %} - {% elif p.partner_type == 1 %} X {% elif p.partner_type == 2 %} Y {% elif p.partner_type == 3 %} Z {% endif %}</td>
+                <td>{% if p.round_number == player.round_number %} - {% else %} {{p.points}} {% endif %}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}
+
+{% block styles %}
+    <style>
+
+        .column {
+            float: left;
+            width: 50%;
+            padding: 5px;
+        }
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        tablex, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+
+{% endblock %}

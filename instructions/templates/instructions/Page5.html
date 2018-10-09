@@ -1,0 +1,25 @@
+{% extends "instructions/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    INSTRUCTIONS - PART 1
+<h5>
+    PLAYERS AND TYPES
+</h5>
+{% endblock %}
+
+
+{% block content %}
+
+<p>
+    <ul>
+    <li>In each round, each participant is <b>randomly assigned a type</b>.</li>
+    <li>A participant’s type can be <b>X, Y, or Z</b>. In each round your type is equally likely to be X, Y or Z.</li>
+    <li>In each round, <b>you are equally likely to be paired with an X, Y, or Z type player</b>, independently of your own type.</li>
+    </ul>
+</p>
+
+    {% next_button %}
+
+{% endblock %}
+

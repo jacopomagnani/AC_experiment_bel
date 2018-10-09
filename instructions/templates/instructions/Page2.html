@@ -1,0 +1,34 @@
+{% extends "instructions/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    INSTRUCTIONS
+
+<h5>
+    PARTS and PAYMENTS
+</h5>
+{% endblock %}
+
+{% block content %}
+
+
+<p>
+    This experiment will consist of <b>four parts</b>.
+</p>
+
+<p>
+    At the end of the experiment, you will be paid {{ fee }}, plus earnings based on the points you have earned during the experiment.
+    Your points will be converted at an exchange rate of {{rate}} per point.
+    To sum up, your final payment is given by the following formula:
+    <center>
+    <em>
+        {{rate}} * (your points) + {{fee}}
+    </em>
+    </center>
+</p>
+
+
+    {% next_button %}
+
+{% endblock %}
+

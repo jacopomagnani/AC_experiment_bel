@@ -1,0 +1,170 @@
+{% extends "instructions/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    INSTRUCTIONS - PART 1
+<h5>
+    POINTS
+</h5>
+{% endblock %}
+
+
+{% block content %}
+
+
+
+<ul>
+    <li>Every time you form a partnership, you earn an amount of points that depends only on the type of the other player.</li>
+    <li>Whenever you do not form a partnership, you earn an amount of point that depends only on your own type.</li>
+    <li>The exact amounts of points you can earn will depend on the game you are playing.
+        There are two versions of this game, called <b>Game A and Game B</b>.
+        There will be 30 rounds for each game, but the exact sequence of games will be random.
+        The following tables show you the actual amounts of points you can earn in each game.
+    </li>
+</ul>
+
+<br>
+
+<div class = "row">
+    <div class="column">
+        <h6>
+            GAME A
+        </h6>
+        <p>
+            Points if you <b>form</b> a partnership:
+        </p>
+        <table class="tablex" align="center">
+            <tr>
+                <td><b>Partner's</b> Type</td>
+                <td>X</td>
+                <td>Y</td>
+                <td>Z</td>
+            </tr>
+            <tr>
+                <td>Your Points</td>
+                <td>160</td>
+                <td>80</td>
+                <td>40</td>
+            </tr>
+        </table>
+        <br>
+        <p>
+            Points if you <b>do not form</b> a partnership:
+        </p>
+        <table class="tablex" align="center">
+            <tr>
+                <td><b>Your</b> Type</td>
+                <td>X</td>
+                <td>Y</td>
+                <td>Z</td>
+            </tr>
+            <tr>
+                <td>Your Points</td>
+                <td>100</td>
+                <td>75</td>
+                <td>25</td>
+            </tr>
+        </table>
+    </div>
+    <div class="column">
+        <h6>
+            GAME B
+        </h6>
+        <p>
+            Points if you <b>form</b> a partnership:
+        </p>
+        <table class="tablex" align="center">
+            <tr>
+                <td><b>Partner's</b> Type</td>
+                <td>X</td>
+                <td>Y</td>
+                <td>Z</td>
+            </tr>
+            <tr>
+                <td>Your Points</td>
+                <td>160</td>
+                <td>80</td>
+                <td>40</td>
+            </tr>
+        </table>
+        <br>
+        <p>
+            Points if you <b>do not form</b> a partnership:
+        </p>
+        <table class="tablex" align="center">
+            <tr>
+                <td><b>Your</b> Type</td>
+                <td>X</td>
+                <td>Y</td>
+                <td>Z</td>
+            </tr>
+            <tr>
+                <td>Your Points</td>
+                <td>80</td>
+                <td>75</td>
+                <td>25</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<ul>
+    <li>The only difference between game A and B is the payoff a type X player receives if he does not form a partnership.</li>
+</ul>
+
+<br>
+<br><br>
+
+<!--<ul>-->
+    <!--<li>Consider for example Game A:</li>-->
+    <!--<ul>-->
+        <!--<li>If you form a partnership with an X type you earn 160 points.</li>-->
+        <!--<li>If you form a partnership with a Y type you earn 80 points.</li>-->
+        <!--<li>If you form a partnership with a Z type you earn 40 points.</li>-->
+    <!--</ul>-->
+    <!--<li>In Game A:</li>-->
+    <!--<ul>-->
+        <!--<li>If you do not form a partnership and your type is X, you earn 100 points.</li>-->
+        <!--<li>If you do not form a partnership and your type is Y, you earn 75 points.</li>-->
+        <!--<li>If you do not form a partnership and your type is Z, you earn 25 points.</li>-->
+    <!--</ul>-->
+    <!--<li>The only difference between game A and B is the payoff a type X player receives if he does not form a partnership: 100 in game A and 80 in game B.</li>-->
+<!--</ul>-->
+
+    {% next_button %}
+
+{% endblock %}
+
+
+
+{% block styles %}
+    <style>
+
+        .column {
+            float: left;
+            width: 50%;
+            padding: 5px;
+        }
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        tablex, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+            text-align: center;
+        }
+        p {
+            text-align: center;
+            line-height: 150%;
+        }
+        h6 {
+            text-align: center;
+            font-size: 160%;
+        }
+    </style>
+
+{% endblock %}

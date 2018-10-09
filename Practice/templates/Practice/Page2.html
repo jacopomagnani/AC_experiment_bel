@@ -1,0 +1,29 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Round {{subsession.round_number}}
+{% endblock %}
+
+{% block content %}
+
+    {% if player.match == 1 %}
+    <p>
+        Your formed a partnership.
+        Your partner's type is: {% if player.partner_type == 1 %} X {% elif player.partner_type == 2 %} Y {% elif player.partner_type == 3 %} Z {% endif %}
+        Your points are: {{player.points}}.
+    </p>
+    {% elif player.match == 0 %}
+    <p>
+        You did not form a partnership.
+        Your partner's type was: {% if player.partner_type == 1 %} X {% elif player.partner_type == 2 %} Y {% elif player.partner_type == 3 %} Z {% endif %}
+        Your points are: {{player.points}}.
+    </p>
+    {% endif %}
+
+    {% next_button %}
+
+{% endblock %}
+
+
+

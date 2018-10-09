@@ -1,0 +1,47 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    The practice rounds are over
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        The practice rounds are over
+    </p>
+
+    <br />
+  {% next_button %}
+    <br />
+    <br />
+    <h4>History Table</h4>
+    <table class="table">
+        <tr>
+            <th>Round</th>
+            <th>Game</th>
+            <th>Your Type</th>
+            <th>Your Clue</th>
+            <th>Your Choice</th>
+            <th>Partner's Choice</th>
+            <th>Partner's Type</th>
+            <th>Your points</th>
+        </tr>
+        {% for p in player.in_all_rounds %}
+            <tr>
+                <td>{{ p.subsession.round_number }}</td>
+                <td>{{ p.subsession.game_name }} </td>
+                <td>{% if p.type == 1 %} X {% elif p.type == 2 %} Y {% elif p.type == 3 %} Z {% endif %}</td>
+                <td>{% if p.signal == 1 %} Red {% elif p.signal == 2 %} Yellow {% elif p.signal == 3 %} Blue {% endif %}</td>
+                <td>{% if p.choice %} Yes {% else %} No {% endif %}</td>
+                <td>{% if p.partner_choice %} Yes {% else %} No {% endif %}</td>
+                <td>{% if p.partner_type == 1 %} X {% elif p.partner_type == 2 %} Y {% elif p.partner_type == 3 %} Z {% endif %}</td>
+                <td>{{p.points}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+
+{% endblock %}
+
+

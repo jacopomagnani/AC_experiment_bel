@@ -1,0 +1,23 @@
+{% extends "instructions/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    INSTRUCTIONS - PART 1
+<h5>
+    PAYMENT
+</h5>
+{% endblock %}
+
+
+{% block content %}
+
+
+
+<ul>
+    <li>The computer will randomly select one round out of the 60 rounds in part 1, called the <b>paying round</b>.</li>
+    <li>At the end of the experiment, the points you have earned in the selected round will be converted at an exchange rate of {{rate}} per point.</li>
+</ul>
+
+    {% next_button %}
+
+{% endblock %}

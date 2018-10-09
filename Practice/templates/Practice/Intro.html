@@ -1,0 +1,25 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Part 1 - Practice Rounds
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        You will now play two practice rounds.
+    </p>
+    <p>
+        These rounds are identical to the actual rounds except that:
+        <ul>
+        <li>during the practice rounds you will only interact with the computer, not with other participants, and the computer will make random choices;</li>
+        <li>points you make in the practice rounds do not count for your final earnings.</li>
+    </ul>
+    </p>
+
+  {% next_button %}
+
+{% endblock %}
+
+

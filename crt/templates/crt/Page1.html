@@ -6,6 +6,13 @@
 {% endblock %}
 
 {% block content %}
+
+<p>
+    In this part, you are asked to answer <b>three questions</b>.
+    You will receive <b>2 points for each correct answer</b>.
+    After you have submitted your answers, you will see the correct answers and the amount of points you have earned.
+    At the end of the experiment, the points you have earned in this part will be converted at an exchange rate of {{rate}} per point.
+</p>
 <p>
     Please answer the following questions.
 </p>
@@ -30,5 +37,20 @@
 <br />
 
 {% next_button %}
+
+{% endblock %}
+
+
+
+
+{% block styles %}
+    <style>
+
+
+        p {
+            text-align: justify;
+        }
+
+    </style>
 
 {% endblock %}

@@ -1,0 +1,25 @@
+{% extends "instructions/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    INSTRUCTIONS - PART 1
+<h5>
+    ROUNDS
+</h5>
+{% endblock %}
+
+
+{% block content %}
+
+<p>
+    <ul>
+    <li>Part 1 of the experiment will be divided into <b>60 rounds</b>.</li>
+    <li>In each round, you are <b>randomly paired</b> with another player.</li>
+    <li>Decisions and points you make in one round do not affect other rounds.</li>
+    </ul>
+</p>
+
+    {% next_button %}
+
+{% endblock %}
+
