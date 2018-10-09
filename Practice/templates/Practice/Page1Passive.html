@@ -66,33 +66,31 @@
         </div>
         <div class="column">
             <p align="center">
-                Distribution of clues:
+                Distribution of Clues:
             </p>
-            <figure align="center"><img src="{% static "global/urns.png" %}" width="80%" height="80%"/></figure>
+            <figure align="center"><img src="{% static "AcceptanceCurse/urns.png" %}" width="80%" height="80%"/></figure>
         </div>
     </div>
 
     <hr>
 
-    <h4 align="center"> In this round you are active: make a choice.</h4>
+    <h4 align="center"> In this round you are passive.</h4>
+
+    {% if player.type == 1 %}
+    <p>
+        You are an X type (if you do not form a partnership, you earn 100 points).
+    </p>
+    {% elif player.type == 2 %}
     <p>
         You are a Y type (if you do not form a partnership, you earn 75 points).
     </p>
-    {% if player.signal == 1 %}
+    {% elif player.type == 3 %}
     <p>
-        You have received a <font color="red"> red </font> clue.
-    </p>
-    {% elif player.signal == 2 %}
-    <p>
-        You have received a <font color="gold"> yellow </font> clue.
-    </p>
-    {% elif player.signal == 3 %}
-    <p>
-        You have received a <font color="blue"> blue </font> clue.
+        You are a Z type (if you do not form a partnership, you earn 25 points).
     </p>
     {% endif %}
 
-    {% formfield player.choice label="Do you want to form a partnership?"%}
+
     {% next_button %}
     <br />
     <br />
