@@ -12,88 +12,17 @@
 {% block content %}
 
 
-
-<!--<ul>-->
-    <!--<li>When you are <b>an active player</b>, after you have received a clue about your potential partner’s type, you <b>can decide whether you want to form a partnership or not</b>.</li>-->
-<!--</ul>-->
 <br>
 <p>When you are <b>an active player</b>, after you have received a clue about your potential partner’s type, you <b>can decide whether you want to form a partnership or not</b></p>
 <br>
-
 <p>
-    The <b>computer will decide on behalf of the passive player</b> whether he agrees to form a partnership or not.
-
-Specifically, if the passive player’s type is Z or Y, the computer will always agree to form a partnership.
-
- If the type of the passive player is X, the computer will agree to form a partnership with some probability, for example with 50% probability.
+    The <b>computer will decide on behalf of the passive player</b> whether to form a partnership or not.
 </p>
-
 <br>
-
 <p>
+    Only if <b>both the active player and the computer</b> acting on the passive player’s behalf choose to form a partnership, then a partnership is formed.
 
-    The actual <b>probability will depend on which version of the game</b> you are playing in a round.
-
-There are five versions of this game, called <b>A, B, C, D and E</b>.
-
-There will be 12 rounds for each game but the exact sequence of games will be random.
-
-The following table reports the actual probability that the computer will propose to form a partnership on behalf of the passive player in different games.
-
-</p>
-
-<br>
-
-<h6 align="center">Probability computer proposes to form partnership on behalf of passive player </h6>
-<table class="tablex" align="center">
-    <tr>
-        <td></td>
-        <td colspan="3">Passive Player's Type</td>
-    </tr>
-    <tr>
-        <td>GAME</td>
-        <td>X</td>
-        <td>Y</td>
-        <td>Z</td>
-    </tr>
-    <tr>
-        <td>A</td>
-        <td>100%</td>
-        <td>100%</td>
-        <td>100%</td>
-    </tr>
-    <tr>
-        <td>B</td>
-        <td>75%</td>
-        <td>100%</td>
-        <td>100%</td>
-    </tr>
-    <tr>
-        <td>C</td>
-        <td>50%</td>
-        <td>100%</td>
-        <td>100%</td>
-    </tr>
-    <tr>
-        <td>D</td>
-        <td>25%</td>
-        <td>100%</td>
-        <td>100%</td>
-    </tr>
-    <tr>
-        <td>E</td>
-        <td>0%</td>
-        <td>100%</td>
-        <td>100%</td>
-    </tr>
-</table>
-
-<br>
-
-<p>
-    Only if <b>both the active player and the computer</b> acting on the passive player’s behalf propose to form a partnership, then a partnership is formed.
-
-    For example, if you are an active player and propose to form a partnership but the computer of the passive player does not agree, the partnership is not formed.
+    For example, if you are an active player and choose to form a partnership but the computer of the passive player chooses not to, the partnership is not formed.
 </p>
 
 <br>

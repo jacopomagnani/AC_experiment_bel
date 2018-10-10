@@ -1,0 +1,116 @@
+{% extends "instructions/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    INSTRUCTIONS - PART 1
+<h5>
+    FORMING A PARTNERSHIP (continued)
+</h5>
+{% endblock %}
+
+
+{% block content %}
+
+
+
+<p>
+    The <b>computer will decide on behalf of the passive player</b> whether to form a partnership or not.
+
+Specifically, if the passive player’s type is Z or Y, the computer will always choose to form a partnership.
+
+ If the type of the passive player is X, the computer will choose to form a partnership with some probability, for example with 50% probability.
+</p>
+
+<br>
+
+<p>
+
+    <b>The actual probability will change</b> in each round, <b>depending on the version of the game</b> you are playing.
+
+There are five versions of this game, called <b>A, B, C, D and E</b>.
+
+There will be 12 rounds for each game but the exact sequence of games will be random.
+
+The following table shows you the actual probability that the computer will choose to form a partnership on behalf of the passive player in different games.
+
+</p>
+
+<br>
+
+<h6 align="center">Probability computer chooses to form partnership on behalf of passive player </h6>
+<table class="tablex" align="center">
+    <tr>
+        <td></td>
+        <td colspan="3">Passive Player's Type</td>
+    </tr>
+    <tr>
+        <td>GAME</td>
+        <td>X</td>
+        <td>Y</td>
+        <td>Z</td>
+    </tr>
+    <tr>
+        <td>A</td>
+        <td>100%</td>
+        <td>100%</td>
+        <td>100%</td>
+    </tr>
+    <tr>
+        <td>B</td>
+        <td>75%</td>
+        <td>100%</td>
+        <td>100%</td>
+    </tr>
+    <tr>
+        <td>C</td>
+        <td>50%</td>
+        <td>100%</td>
+        <td>100%</td>
+    </tr>
+    <tr>
+        <td>D</td>
+        <td>25%</td>
+        <td>100%</td>
+        <td>100%</td>
+    </tr>
+    <tr>
+        <td>E</td>
+        <td>0%</td>
+        <td>100%</td>
+        <td>100%</td>
+    </tr>
+</table>
+
+<br>
+
+    {% next_button %}
+
+{% endblock %}
+
+
+
+
+{% block styles %}
+    <style>
+
+        .column {
+            float: left;
+            width: 50%;
+            padding: 5px;
+        }
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        tablex, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+
+{% endblock %}

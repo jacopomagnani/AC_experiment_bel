@@ -10,35 +10,60 @@
 
 
 {% block content %}
-<div class = "row">
 
-<div class="column">
-    <ul>
-        <li>When you are active, <b>you will not know the type of the participant</b> you are paired with.</li>
-        <li>However, <b>you will receive a clue</b> about your potential partner’s type. Clues are determined in the following way.</li>
-        <li>The computer will digitally draw a random ball from <b>a box containing 24 balls</b> of different colors.</li>
-        <li>Each ball can be either <b>blue, yellow or red</b>.</li>
-        <li>The number of blue, yellow and red balls in <b>the box depends on your partner’s type</b>:</li>
-        <p>
-            If your partner’s type is X, the box contains no blue balls, 12 yellow balls and 12 red balls.
-            If your partner’s type is Y, the box contains 24 yellow balls but no blue or red balls.
-            If your partner’s type is Z, the box contains 12 blue balls, 12 yellow balls and no red balls.
-        </p>
-    </ul>
-</div>
 
-<div class="column">
-    <ul>
-        <li>The boxes used in the experiment are illustrated in the figure below.</li>
-    </ul>
-    <figure align="center"><img src="{% static "global/urns.png" %}" width="70%" height="70%"/></figure>
-    <ul>
-        <li>To give you a clue about the type of your potential partner, <b>the computer will first determine which box to use given your partner’s type</b>.</li>
-        <li>Then <b>it will digitally draw a random ball</b>: each single ball in the box has the same probability of being selected, equal to 1/24.</li>
-        <li>The clue you receive is the color of this randomly drawn ball.</li>
-    </ul>
-</div>
-</div>
+<p>
+    When you are active, <b>you will not know the type of the participant</b> you are paired with.
+    However, <b>you will receive a clue</b> about your potential partner’s type. Clues are determined in the following way.
+    The computer will digitally draw a random ball from <b>a box containing 24 balls</b> of different colors.
+    Each ball can be either <b>blue, yellow or red</b>.
+    The number of blue, yellow and red balls in <b>the box depends on your partner’s type</b>.
+    The boxes used in the experiment are illustrated in the figure below.
+    If your partner’s type is X, the box contains no blue balls, 12 yellow balls and 12 red balls.
+    If your partner’s type is Y, the box contains 24 yellow balls but no blue or red balls.
+    If your partner’s type is Z, the box contains 12 blue balls, 12 yellow balls and no red balls.
+</p>
+    <figure align="center"><img src="{% static "global/urns_cond_A.png" %}" width="50%" height="50%"/></figure>
+<br>
+<p>
+    To give you a clue about the type of your potential partner, <b>the computer will first determine which box to use given your partner’s type</b>.
+    Then <b>it will digitally draw a random ball</b>: each single ball in the box has the same probability of being selected, equal to 1/24.
+    The clue you receive is the color of this randomly drawn ball.
+</p>
+
+
+
+<br><br>
+
+<!--<div class = "row">-->
+
+<!--<div class="column">-->
+    <!--<ul>-->
+        <!--<li>When you are active, <b>you will not know the type of the participant</b> you are paired with.</li>-->
+        <!--<li>However, <b>you will receive a clue</b> about your potential partner’s type. Clues are determined in the following way.</li>-->
+        <!--<li>The computer will digitally draw a random ball from <b>a box containing 24 balls</b> of different colors.</li>-->
+        <!--<li>Each ball can be either <b>blue, yellow or red</b>.</li>-->
+        <!--<li>The number of blue, yellow and red balls in <b>the box depends on your partner’s type</b>:</li>-->
+        <!--<p>-->
+            <!--If your partner’s type is X, the box contains no blue balls, 12 yellow balls and 12 red balls.-->
+            <!--If your partner’s type is Y, the box contains 24 yellow balls but no blue or red balls.-->
+            <!--If your partner’s type is Z, the box contains 12 blue balls, 12 yellow balls and no red balls.-->
+        <!--</p>-->
+    <!--</ul>-->
+<!--</div>-->
+
+<!--<div class="column">-->
+    <!--<ul>-->
+        <!--<li>The boxes used in the experiment are illustrated in the figure below.</li>-->
+    <!--</ul>-->
+    <!--<figure align="center"><img src="{% static "global/urns.png" %}" width="70%" height="70%"/></figure>-->
+    <!--<ul>-->
+        <!--<li>To give you a clue about the type of your potential partner, <b>the computer will first determine which box to use given your partner’s type</b>.</li>-->
+        <!--<li>Then <b>it will digitally draw a random ball</b>: each single ball in the box has the same probability of being selected, equal to 1/24.</li>-->
+        <!--<li>The clue you receive is the color of this randomly drawn ball.</li>-->
+    <!--</ul>-->
+<!--</div>-->
+<!--</div>-->
 
 <br><br>
 

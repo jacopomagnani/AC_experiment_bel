@@ -37,6 +37,10 @@ class Page7(Page):
     pass
 
 
+class Page7b(Page):
+    pass
+
+
 class Page8(Page):
     pass
 
@@ -58,5 +62,6 @@ page_sequence = [
     Page8,
     Page6,
     Page7,
+    Page7b,
     Page9
 ]
