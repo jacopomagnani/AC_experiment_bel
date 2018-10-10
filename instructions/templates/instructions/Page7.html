@@ -13,31 +13,85 @@
 
 
 
-<ul>
-    <li>When you are <b>an active player</b>, after you have received a clue about your potential partner’s type, you <b>can decide whether you want to form a partnership or not</b>.</li>
-</ul>
+<!--<ul>-->
+    <!--<li>When you are <b>an active player</b>, after you have received a clue about your potential partner’s type, you <b>can decide whether you want to form a partnership or not</b>.</li>-->
+<!--</ul>-->
+<br>
+<p>When you are <b>an active player</b>, after you have received a clue about your potential partner’s type, you <b>can decide whether you want to form a partnership or not</b></p>
 <br>
 
 <p>
-    The computer will decide on behalf of the passive player whether he agrees to form a partnership or not.
+    The <b>computer will decide on behalf of the passive player</b> whether he agrees to form a partnership or not.
 
 Specifically, if the passive player’s type is Z or Y, the computer will always agree to form a partnership.
 
  If the type of the passive player is X, the computer will agree to form a partnership with some probability, for example with 50% probability.
+</p>
 
-The actual probability will depend on which version of the game you are playing in a round.
+<br>
 
-There are five versions of this game, called A, B, C, D and E.
+<p>
+
+    The actual <b>probability will depend on which version of the game</b> you are playing in a round.
+
+There are five versions of this game, called <b>A, B, C, D and E</b>.
 
 There will be 12 rounds for each game but the exact sequence of games will be random.
 
-The following table reports the actual probability that the computer will propose to form a partnership on behalf of an X type player in different games.
+The following table reports the actual probability that the computer will propose to form a partnership on behalf of the passive player in different games.
 
 </p>
 
+<br>
+
+<h6 align="center">Probability computer proposes to form partnership on behalf of passive player </h6>
+<table class="tablex" align="center">
+    <tr>
+        <td></td>
+        <td colspan="3">Passive Player's Type</td>
+    </tr>
+    <tr>
+        <td>GAME</td>
+        <td>X</td>
+        <td>Y</td>
+        <td>Z</td>
+    </tr>
+    <tr>
+        <td>A</td>
+        <td>100%</td>
+        <td>100%</td>
+        <td>100%</td>
+    </tr>
+    <tr>
+        <td>B</td>
+        <td>75%</td>
+        <td>100%</td>
+        <td>100%</td>
+    </tr>
+    <tr>
+        <td>C</td>
+        <td>50%</td>
+        <td>100%</td>
+        <td>100%</td>
+    </tr>
+    <tr>
+        <td>D</td>
+        <td>25%</td>
+        <td>100%</td>
+        <td>100%</td>
+    </tr>
+    <tr>
+        <td>E</td>
+        <td>0%</td>
+        <td>100%</td>
+        <td>100%</td>
+    </tr>
+</table>
+
+<br>
 
 <p>
-    Only if the active player proposes to form a partnership and the computer acting on the passive player’s behalf agrees, then a partnership is formed.
+    Only if <b>both the active player and the computer</b> acting on the passive player’s behalf propose to form a partnership, then a partnership is formed.
 
     For example, if you are an active player and propose to form a partnership but the computer of the passive player does not agree, the partnership is not formed.
 </p>
@@ -45,5 +99,33 @@ The following table reports the actual probability that the computer will propos
 <br>
 
     {% next_button %}
+
+{% endblock %}
+
+
+
+
+{% block styles %}
+    <style>
+
+        .column {
+            float: left;
+            width: 50%;
+            padding: 5px;
+        }
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        tablex, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
 
 {% endblock %}
