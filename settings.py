@@ -21,7 +21,12 @@ SESSION_CONFIGS = [
         'display_name': "Matching with Noise",
         'num_demo_participants': 2,
         'app_sequence': ['instructions', 'Practice', 'AcceptanceCurse', 'mpl', 'crt','survey', 'finalpage'],
-        'players_per_group': 8
+        'players_per_group': 8,
+        'doc': """
+            Note: 'players_per_group' must be an even number;
+            when the number of participants is not divisible by the number of players per group, 
+            then players_per_group will be the number of players in the largest group(s)
+            """
     }
     ]
 # see the end of this file for the inactive session configs
