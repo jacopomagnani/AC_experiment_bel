@@ -20,7 +20,7 @@ SESSION_CONFIGS = [
         'name': 'AcceptanceCurse',
         'display_name': "Matching with Noise",
         'num_demo_participants': 2,
-        'app_sequence': ['instructions', 'Practice', 'AcceptanceCurse', 'mpl', 'crt','survey', 'finalpage'],
+        'app_sequence': ['LINEEXPage', 'WelcomePage', 'instructions', 'Practice', 'AcceptanceCurse', 'mpl', 'crt', 'survey', 'finalpage'],
         'players_per_group': 8,
         'doc': """
             Note: 'players_per_group' must be an even number;

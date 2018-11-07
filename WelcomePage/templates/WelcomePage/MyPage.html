@@ -1,0 +1,18 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+   Welcome!
+{% endblock %}
+
+{% block content %}
+<p>
+    Welcome to this experiment.
+</p>
+<p>
+    Please do not click the "Next" button until the lab manager tells you to do so.
+</p>
+
+    {% next_button %}
+
+{% endblock %}
