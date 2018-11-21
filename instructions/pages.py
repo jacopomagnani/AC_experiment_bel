@@ -10,7 +10,7 @@ class Page1(Page):
 class Page2(Page):
     def vars_for_template(self):
         return {
-            'rate': c(100).to_real_world_currency(self.session),
+            'rate': self.session.config['real_world_currency_per_point'],
             'fee': self.session.config['participation_fee'],
         }
 
@@ -46,7 +46,7 @@ class Page8(Page):
 class Page9(Page):
     def vars_for_template(self):
         return {
-            'rate': c(100).to_real_world_currency(self.session)
+            'rate': self.session.config['real_world_currency_per_point']
         }
 
 
