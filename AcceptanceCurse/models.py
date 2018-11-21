@@ -110,6 +110,7 @@ class Group(BaseGroup):
             p.points = p.match * match_value[p.partner_type-1] + (1 - p.match) * reservation_value[p.type-1]
             if self.subsession.round_number == self.session.vars['paying_round']:
                 p.payoff = p.points
+                p.participant.vars['part1_payoff'] = p.points
             else:
                 p.payoff = c(0)
 

@@ -68,7 +68,7 @@ class FinalPage(Page):
 
     def vars_for_template(self):
         return {
-            'total_payoff': sum([p.payoff for p in self.player.in_all_rounds()]),
+            'part1_payoff': self.participant.vars['part1_payoff'],
             'paying_round': self.session.vars['paying_round']
         }
 
