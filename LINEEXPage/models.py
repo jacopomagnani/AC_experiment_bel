@@ -12,7 +12,7 @@ Your app description
 
 
 class Constants(BaseConstants):
-    name_in_url = 'LINEEX page'
+    name_in_url = 'LINEEXpage'
     players_per_group = None
     num_rounds = 1
 
