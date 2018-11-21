@@ -76,7 +76,7 @@ class Decision(Page):
         else:
             return {
                 'choices':   self.player.participant.vars['mpl_choices'],
-                'rate': c(rate).to_real_world_currency(self.session)
+                'rate': self.session.config['real_world_currency_per_point']
             }
 
     # set player's payoff

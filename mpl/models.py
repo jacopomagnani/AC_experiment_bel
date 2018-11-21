@@ -134,8 +134,10 @@ class Player(BasePlayer):
         else:
             if self.random_draw <= self.participant.vars['mpl_index_to_pay']:
                 self.payoff = Constants.lottery_b_hi
+                self.participant.vars['part2_payoff'] = Constants.lottery_b_hi
             else:
                 self.payoff = Constants.lottery_b_lo
+                self.participant.vars['part2_payoff'] = Constants.lottery_b_lo
 
         # set payoff as global variable
         # ------------------------------------------------------------------------------------------------------------
