@@ -18,8 +18,6 @@ class MyWaitPage1(WaitPage):
 
 class Page1Active(Page):
 
-    timeout_seconds = 60
-
     form_model = 'player'
     form_fields = ['choice']
 
@@ -41,8 +39,6 @@ class Page1Active(Page):
 
 class Page1Passive(Page):
 
-    timeout_seconds = 30
-
     def vars_for_template(self):
         return {'prob': Constants.prob_Haccept[self.subsession.game]}
 
@@ -57,8 +53,7 @@ class MyWaitPage2(WaitPage):
 
 
 class Page2(Page):
-
-    timeout_seconds = 10
+    pass
 
 
 class FinalPage(Page):
