@@ -9,8 +9,35 @@
 <p>
     The experiment is over.
 </p>
+
 <p>
-    Your payment is: {{player.participant.payoff_plus_participation_fee}}.
+    Your score in Part 1 is: {{part1_payoff|c}}.
 </p>
+
+<p>
+    Your score in Part 2 is: {{part2_payoff|c}}.
+</p>
+
+<p>
+    Your score in Part 3 is: {{part3_payoff|c}}.
+</p>
+
+<p>
+    Your total score is: {{player.participant.payoff}}.
+</p>
+
+<p>
+    Your total score converted in euros is: &euro;{{rate}} <span>&times;</span> (your total score) = {{total_payoff_in_currency}}.
+</p>
+
+
+<p>
+    Your score in euros plus the show-up fee of {{fee}} is: {{raw_payment}}
+</p>
+
+<p>
+    Your final payment rounded to up to 10 cents is: {{final_payment}}
+</p>
+
 
 {% endblock %}
