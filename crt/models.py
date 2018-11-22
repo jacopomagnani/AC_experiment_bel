@@ -31,3 +31,14 @@ class Player(BasePlayer):
     answer3 = models.FloatField()
     num_correct = models.IntegerField()
 
+    def get_outcome(self):
+        k = 0
+        if self.answer1 == 5:
+            k = k + 1
+        if self.answer2 == 5:
+            k = k + 1
+        if self.answer3 == 47:
+            k = k + 1
+        self.num_correct = k
+        self.payoff = k * 2
+        self.participant.vars['part3_payoff'] = k * 2
