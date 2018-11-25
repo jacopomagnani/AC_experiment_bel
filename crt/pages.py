@@ -11,6 +11,21 @@ class Page1(Page):
     form_model = 'player'
     form_fields = ['answer1', 'answer2', 'answer3']
 
+    def answer1_error_message(self, value):
+        print('value is', value)
+        if value is None:
+            return 'Please enter an answer.'
+
+    def answer2_error_message(self, value):
+        print('value is', value)
+        if value is None:
+            return 'Please enter an answer.'
+
+    def answer3_error_message(self, value):
+        print('value is', value)
+        if value is None:
+            return 'Please enter an answer.'
+
     def before_next_page(self):
         self.player.get_outcome()
 

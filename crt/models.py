@@ -26,9 +26,9 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-    answer1 = models.FloatField()
-    answer2 = models.FloatField()
-    answer3 = models.FloatField()
+    answer1 = models.FloatField(blank=True)
+    answer2 = models.FloatField(blank=True)
+    answer3 = models.FloatField(blank=True)
     num_correct = models.IntegerField()
 
     def get_outcome(self):

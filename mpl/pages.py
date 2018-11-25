@@ -56,6 +56,11 @@ class Decision(Page):
         else:
             return form_fields
 
+    def error_message(self, values):
+        print('values is', values)
+        if None in values.values():
+            return 'You must select one of the options for each decision. Please make your choices again.'
+
     # variables for template
     # ----------------------------------------------------------------------------------------------------------------
     def vars_for_template(self):

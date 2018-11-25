@@ -64,7 +64,8 @@ class Player(BasePlayer):
             [1, 'Yes'],
             [0, 'No'],
         ],
-        widget=widgets.RadioSelectHorizontal
+        widget=widgets.RadioSelectHorizontal,
+        blank=True
     )
     partner_choice = models.IntegerField()
     match = models.IntegerField()

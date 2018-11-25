@@ -95,11 +95,11 @@ class Player(BasePlayer):
     # ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     if Constants.certain_choice:
         for j in range(1, Constants.num_choices + 1):
-            locals()['choice_' + str(j)] = models.StringField()
+            locals()['choice_' + str(j)] = models.StringField(blank=True)
         del j
     else:
         for j in range(1, Constants.num_choices):
-            locals()['choice_' + str(j)] = models.StringField()
+            locals()['choice_' + str(j)] = models.StringField(blank=True)
         del j
 
     random_draw = models.IntegerField()

@@ -27,11 +27,13 @@ class Group(BaseGroup):
 
 class Player(BasePlayer):
     sex = models.StringField(
-        choices=['Female', 'Male']
+        choices=['Female', 'Male'],
+        blank=True
     )
     major = models.StringField(
         choices=['Science, technology, engineering and mathematics',
                  'Social sciences',
                  'Art and humanities'
-                 ]
+                 ],
+        blank=True
     )
