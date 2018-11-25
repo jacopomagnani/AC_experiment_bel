@@ -65,9 +65,9 @@ ROOMS = [
 #   anybody can play a demo version of your game, but not access the rest
 #   of the admin interface, set it to DEMO.
 
-os.environ['OTREE_PRODUCTION'] = "1"
-os.environ['OTREE_AUTH_LEVEL'] = "STUDY"
-os.environ['OTREE_ADMIN_PASSWORD'] = "######"
+#os.environ['OTREE_PRODUCTION'] = "1"
+#os.environ['OTREE_AUTH_LEVEL'] = "STUDY"
+#os.environ['OTREE_ADMIN_PASSWORD'] = "######"
 
 # for flexibility, you can set it in the environment variable OTREE_AUTH_LEVEL
 AUTH_LEVEL = environ.get('OTREE_AUTH_LEVEL')
