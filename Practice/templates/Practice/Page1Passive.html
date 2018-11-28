@@ -11,7 +11,7 @@
     <div class = "row">
         <div class="column">
             <p align="center">
-                Points if you form a partnership:
+                Points if partnership is formed:
             </p>
             <table class="tablex" align="center">
                 <tr>
@@ -29,7 +29,7 @@
             </table>
             <br>
             <p align="center">
-                Points if you do not form a partnership:
+                Points if partnership is not formed:
             </p>
             <table class="tablex" align="center">
                 <tr>
@@ -78,15 +78,15 @@
 
     {% if player.type == 1 %}
     <p>
-        You are an X type (if you do not form a partnership, you earn 100 points).
+        You are an X type (if no partnership is formed, you earn 100 points).
     </p>
     {% elif player.type == 2 %}
     <p>
-        You are a Y type (if you do not form a partnership, you earn 75 points).
+        You are a Y type (if no partnership is formed, you earn 75 points).
     </p>
     {% elif player.type == 3 %}
     <p>
-        You are a Z type (if you do not form a partnership, you earn 25 points).
+        You are a Z type (if no partnership is formed, you earn 25 points).
     </p>
     {% endif %}
 
