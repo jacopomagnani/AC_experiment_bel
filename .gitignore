@@ -1,0 +1,5 @@
+db.sqlite3
+.idea/
+__pycache__/
+__temp_migrations/
+AcceptanceCurse/__pycache__/
